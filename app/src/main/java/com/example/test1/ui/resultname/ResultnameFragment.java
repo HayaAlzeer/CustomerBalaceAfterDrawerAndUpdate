@@ -128,6 +128,8 @@ public class ResultnameFragment extends Fragment  implements NameAdapter.OnItemC
                         .replace(R.id.nav_host_fragment_content_main, GF, GF.getTag())
                         .commit();
 
+             //  Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+
             }
         });
 
