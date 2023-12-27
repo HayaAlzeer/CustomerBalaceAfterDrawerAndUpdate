@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.result.ResultFragment">
+
+    <TextView
+        android:id="@+id/text_slideshw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <ProgressBar
+        android:id="@+id/idLoadingPB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        tools:ignore="MissingConstraints"  />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:weightSum="100" >
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="92"
+        android:orientation="vertical">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/head"
+            android:layoutDirection="rtl"
+
+            android:stretchColumns="*">
+
+            <TableRow
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@color/cardview_dark_background"
+                >
+
+
+
+                <TextView
+                    android:text="رقم المشترك "
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numm"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.20"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/idTVResponse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.80"
+                    android:gravity="clip_horizontal|center|clip_vertical|center_horizontal"
+                    android:paddingRight="3dp"
+                    android:text="الاسم "
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
+        <TableRow
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_width="wrap_content" android:gravity="center_horizontal"
+
+
+                tools:ignore="MissingConstraints"
+                />
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
+
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="0dp"
+
+android:layout_weight="8"
+android:gravity="right|bottom"
+android:orientation="vertical" >
+
+
+<TableLayout
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <TableRow
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#099"
+            android:onClick="LogoutWithoutSave"
+            android:text=" رجوع  "
+            tools:ignore="OnClick" />
+
+
+    </TableRow>
+
+
+
+</TableLayout>
+
+</LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

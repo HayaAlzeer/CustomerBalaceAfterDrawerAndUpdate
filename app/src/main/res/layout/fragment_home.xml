@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    >
+
+
+    <TableRow
+        android:id="@+id/tableRowd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="100px"
+        android:paddingTop="100px">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="اختر طريقة البحث"
+            android:textStyle="bold"
+            android:textSize="35sp" />
+
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50px">
+
+
+        <Button
+            android:id="@+id/mobilesearch"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:onClick="mobilesearch"
+            android:text="بحث برقم الموبايل "
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawableLeft="@android:drawable/ic_menu_call"/>
+
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRo8w5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="DuplicateIds"
+
+        android:paddingBottom="50px">
+
+        <Button
+            android:id="@+id/idsearch"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/idicon"
+            android:gravity="center|center_horizontal"
+            android:text="بحث برقم الهوية "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="DuplicateIds"
+        android:paddingBottom="50px">
+
+        <Button
+            android:id="@+id/namesearch"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:text="بحث بالاسم "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/nameicon"/>
+
+    </TableRow>
+
+</TableLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layoutDirection="rtl"
+    android:orientation="vertical">
+
+
+
+
+
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:stretchColumns="*"
+            >
+
+
+            <TableRow
+
+                android:paddingBottom="20px"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20px">
+
+
+
+                <TextView
+                    android:id="@+id/agreemenT_ID"
+                    android:text=" "
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_weight="0.14"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textStyle="bold">
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/servS_TYPE"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center"
+
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:paddingRight="3dp"
+                    android:textStyle="bold">
+                </TextView>
+
+
+
+
+                <TextView
+                    android:id="@+id/block_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.14"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="18dp">
+                </TextView>
+
+
+                <TextView
+                    android:id="@+id/quarter_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.14"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="18dp">
+                </TextView>
+
+
+
+
+                <TextView
+                    android:id="@+id/parcel_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.14"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="18dp">
+                </TextView>
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+
+</LinearLayout>

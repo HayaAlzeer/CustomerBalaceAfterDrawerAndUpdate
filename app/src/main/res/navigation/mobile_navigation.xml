@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.test1.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_update"
+            app:destination="@id/nav_update" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_closeapp"
+            app:destination="@id/nav_closeapp" />
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_update"
+        android:name="com.example.test1.ui.update.UpdateFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_nav_update_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_update_to_nav_closeapp"
+            app:destination="@id/nav_closeapp" />
+        <action
+            android:id="@+id/action_nav_update_self"
+            app:destination="@id/nav_update" />
+
+        <action android:id="@+id/action_global_nav_update" app:destination="@id/nav_update"/>
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_closeapp"
+        android:name="com.example.test1.ui.closeApp.CloseAppFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_closeapp" />
+
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.test1.ui.gallery.GalleryFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_gallery" >
+
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_update"
+            app:destination="@id/nav_update" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_result"
+        android:name="com.example.test1.ui.result.ResultFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_result" >
+
+
+        <action
+            android:id="@+id/action_nav_result_to_nav_update"
+            app:destination="@id/nav_update" />
+    </fragment>
+
+
+
+    <action android:id="@+id/action_global_nav_update3" app:destination="@id/nav_update"/>
+    <action android:id="@+id/action_global_nav_home" app:destination="@id/nav_home"/>
+    <action android:id="@+id/action_global_nav_closeapp" app:destination="@id/nav_closeapp"/>
+
+
+
+</navigation>
