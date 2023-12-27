@@ -146,88 +146,95 @@ public class UpdateFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
 
-                Log.d("ADebugTag", "Value: " +""+response.toString()  );
-
-
 
                 try {
+                    JSONObject responsee = new JSONObject(String.valueOf(response));
+
+                    if (responsee.getString("f_name_a").equalsIgnoreCase("") )
+                    {
+
+                        Toast.makeText(getActivity()," لا يوجد معلومات "   , Toast.LENGTH_SHORT).show();
+
+                    }else
+                    {
 
 
-                    JSONObject responseObj = new JSONObject(String.valueOf(response));
+                        try {
 
 
-
-                    String arabic_name = responseObj.getString("arabic_name");
-                    String mobile = responseObj.getString("mobile");
-                    String email = responseObj.getString("email");
-                    String building_id = responseObj.getString("building_id");
-                    String zone_id = responseObj.getString("zone_id");
-                    String flat_id = responseObj.getString("flat_id");
-                    String street_id = responseObj.getString("street_id");
-                    String quarter_id = responseObj.getString("quarter_id");
-                    String block_id = responseObj.getString("block_id");
-
-                    String parcel_id = responseObj.getString("parcel_id");
-
-                    String idcard_type = responseObj.getString("idcard_type");
-
-                    String idcard_no = responseObj.getString("idcard_no");
-                    String f_name_a = responseObj.getString("f_name_a");
-                    String s_name_a = responseObj.getString("s_name_a");
-                    String m_name_a = responseObj.getString("m_name_a");
-                    String l_name_a = responseObj.getString("l_name_a");
+                            JSONObject responseObj = new JSONObject(String.valueOf(response));
 
 
+                            String arabic_name = responseObj.getString("arabic_name");
+                            String mobile = responseObj.getString("mobile");
+                            String email = responseObj.getString("email");
+                            String building_id = responseObj.getString("building_id");
+                            String zone_id = responseObj.getString("zone_id");
+                            String flat_id = responseObj.getString("flat_id");
+                            String street_id = responseObj.getString("street_id");
+                            String quarter_id = responseObj.getString("quarter_id");
+                            String block_id = responseObj.getString("block_id");
+
+                            String parcel_id = responseObj.getString("parcel_id");
+
+                            String idcard_type = responseObj.getString("idcard_type");
+
+                            String idcard_no = responseObj.getString("idcard_no");
+                            String f_name_a = responseObj.getString("f_name_a");
+                            String s_name_a = responseObj.getString("s_name_a");
+                            String m_name_a = responseObj.getString("m_name_a");
+                            String l_name_a = responseObj.getString("l_name_a");
 
 
+                            Bundle bundle = new Bundle();
 
-                    Bundle bundle = new Bundle();
+                            bundle.putString("URL", String.valueOf("http://gis.duracity.ps/Mobile/api/Customer/SystemNumber/Name/" + EtText.getText().toString()));
+                            bundle.putString("System_No", String.valueOf(EtText.getText().toString()));
+                            bundle.putString("arabic_name", String.valueOf(arabic_name));
+                            bundle.putString("mobile", String.valueOf(mobile));
+                            bundle.putString("email", String.valueOf(email));
+                            bundle.putString("building_id", String.valueOf(building_id));
+                            bundle.putString("zone_id", String.valueOf(zone_id));
 
-                    bundle.putString("URL", String.valueOf( "http://gis.duracity.ps/Mobile/api/Customer/SystemNumber/Name/"+ EtText.getText().toString() ));
-                    bundle.putString("System_No", String.valueOf( EtText.getText().toString() ));
-                    bundle.putString("arabic_name", String.valueOf( arabic_name ));
-                    bundle.putString("mobile", String.valueOf( mobile ));
-                    bundle.putString("email", String.valueOf( email ));
-                    bundle.putString("building_id", String.valueOf( building_id ));
-                    bundle.putString("zone_id", String.valueOf( zone_id ));
-
-                    bundle.putString("flat_id", String.valueOf( flat_id ));
-                    bundle.putString("street_id", String.valueOf( street_id ));
-                    bundle.putString("street_id", String.valueOf( street_id ));
-                    bundle.putString("quarter_id", String.valueOf( quarter_id ));
-                    bundle.putString("block_id", String.valueOf( block_id ));
-                    bundle.putString("parcel_id", String.valueOf( parcel_id ));
-
-
-                    bundle.putString("idcard_type", String.valueOf( idcard_type ));
-                    bundle.putString("idcard_no", String.valueOf( idcard_no ));
-
-                    bundle.putString("f_name_a", String.valueOf( f_name_a ));
-                    bundle.putString("s_name_a", String.valueOf( s_name_a ));
-                    bundle.putString("m_name_a", String.valueOf( m_name_a ));
-                    bundle.putString("l_name_a", String.valueOf( l_name_a));
+                            bundle.putString("flat_id", String.valueOf(flat_id));
+                            bundle.putString("street_id", String.valueOf(street_id));
+                            bundle.putString("street_id", String.valueOf(street_id));
+                            bundle.putString("quarter_id", String.valueOf(quarter_id));
+                            bundle.putString("block_id", String.valueOf(block_id));
+                            bundle.putString("parcel_id", String.valueOf(parcel_id));
 
 
+                            bundle.putString("idcard_type", String.valueOf(idcard_type));
+                            bundle.putString("idcard_no", String.valueOf(idcard_no));
+
+                            bundle.putString("f_name_a", String.valueOf(f_name_a));
+                            bundle.putString("s_name_a", String.valueOf(s_name_a));
+                            bundle.putString("m_name_a", String.valueOf(m_name_a));
+                            bundle.putString("l_name_a", String.valueOf(l_name_a));
 
 
+                            UpdatecusFragment GF = new UpdatecusFragment();
+                            GF.setArguments(bundle);
+                            FragmentManager manager = getFragmentManager();
+                            manager.beginTransaction()
+                                    .replace(R.id.nav_host_fragment_content_main, GF, GF.getTag())
+                                    .commit();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
 
-
-
-
-
-
-
-                    UpdatecusFragment GF = new UpdatecusFragment();
-                    GF.setArguments(bundle);
-                    FragmentManager manager = getFragmentManager();
-                    manager.beginTransaction()
-                            .replace(R.id.nav_host_fragment_content_main, GF, GF.getTag())
-                            .commit();
-
+                    }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
+
+
+
+                Log.d("ADebugTag", "Value: " + "" + response.toString());
+
+
 
             }
         }, new Response.ErrorListener() {
