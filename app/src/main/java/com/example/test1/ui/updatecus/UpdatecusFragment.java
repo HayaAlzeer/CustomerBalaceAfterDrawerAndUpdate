@@ -233,6 +233,7 @@ public class UpdatecusFragment extends Fragment {
         quarter_id =  String.valueOf(getArguments().getString("quarter_id"));
         block_id = String.valueOf(getArguments().getString("block_id"));
         idcard_type = String.valueOf(getArguments().getString("idcard_type"));
+
         idcard_no = String.valueOf(getArguments().getString("idcard_no"));
 
         f_name_a = String.valueOf(getArguments().getString("f_name_a"));
@@ -290,6 +291,13 @@ public class UpdatecusFragment extends Fragment {
         //fill data in spinner
         ArrayAdapter<DocType> adapter = new ArrayAdapter<DocType>(getActivity(), android.R.layout.simple_spinner_dropdown_item, countryList);
         spin.setAdapter(adapter);
+
+
+
+        if (idcard_type.equalsIgnoreCase(""))
+        {
+            idcard_type = "001";
+        }
 
         int compareValue = Integer.parseInt(idcard_type);
         if (compareValue == 1) {
@@ -591,6 +599,11 @@ public class UpdatecusFragment extends Fragment {
                         etFloorNum.setText("");
                         etemail.setText(email);
                         etstreet_id.setText(street_id);
+
+                        if (idcard_type.equalsIgnoreCase(""))
+                        {
+                            idcard_type = "001";
+                        }
 
                         int compareValue = Integer.parseInt(idcard_type);
                         if (compareValue == 1) {
