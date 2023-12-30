@@ -297,6 +297,7 @@ public class UpdatecusFragment extends Fragment {
         if (idcard_type.equalsIgnoreCase(""))
         {
             idcard_type = "001";
+            Toast.makeText(getActivity(), "" , Toast.LENGTH_SHORT).show();
         }
 
         int compareValue = Integer.parseInt(idcard_type);
